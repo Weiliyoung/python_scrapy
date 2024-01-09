@@ -2,7 +2,7 @@ import scrapy
 
 
 class GDHSCSpider(scrapy.Spider):
-    name = 'gdhsc_spider'
+    name = 'test_gdhsc_spider'
     start_urls = ['https://www.gdhsc.edu.cn/']
 
     def parse(self, response):
