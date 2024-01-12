@@ -19,6 +19,18 @@ LOG_FILE = 'scrapy.log'  # 将日志输出到名为 scrapy.log 的文件中
 FEED_FORMAT = 'json'
 FEED_URI = 'output.json'
 
+#splash
+SPLASH_URL = 'http://localhost:8050'
+DOWNLOADER_MIDDLEWARES = {
+    'scrapy_splash.SplashCookiesMiddleware': 723,
+    'scrapy_splash.SplashMiddleware': 725,
+    'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware': 810,
+}
+SPIDER_MIDDLEWARES = {
+    'scrapy_splash.SplashDeduplicateArgsMiddleware': 100,
+}
+DUPEFILTER_CLASS = 'scrapy_splash.SplashAwareDupeFilter'
+
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
